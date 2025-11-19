@@ -204,15 +204,26 @@ def notification_handler(sender, data):
     # Down: data[2]
     # Left: data[3]
     
+    # Remove pauses
+    pyautogui.PAUSE = 0
+    
+    # Mouse clicking
+    if data[1] < 25 and data[2] < 25 and data[3] < 25:
+        # Left click
+        if data[0] < 25:
+            print("Left click")
+            pyautogui.click()
+        # Right click
+        else:
+            print("Right click")
+            pyautogui.click(button="right")
+    
     # move the cursor
     # The values  are 0-255, 
     # with 0 being they are at max closeness, 
     # and 255 being the hand is not there
     right_movement = ((255 - data[1]) - (255 - data[3])) * cursor_speed_mult
     down_movement =  ((255 - data[2]) - (255 - data[0])) * cursor_speed_mult
-    
-    # Remove pauses
-    pyautogui.PAUSE = 0
     
     pyautogui.move(right_movement, down_movement)
     
