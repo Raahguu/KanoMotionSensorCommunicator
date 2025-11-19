@@ -1,0 +1,150 @@
+Connected to Kano-4SB-e7-40-e0
+Backend: BleakClientWinRT (FD:D3:9D:E7:40:E0)
+Services
+UUID: 00001800-0000-1000-8000-00805f9b34fb
+Handle: 1
+Description: Generic Access Profile
+    Characterists:
+        UUID: 00002a00-0000-1000-8000-00805f9b34fb
+        Handle: 2
+        Description: Device Name
+        Descriptiors:
+        Properties:
+            write
+            read
+        UUID: 00002a01-0000-1000-8000-00805f9b34fb
+        Handle: 4
+        Description: Appearance
+        Descriptiors:
+        Properties:
+            read
+        UUID: 00002a04-0000-1000-8000-00805f9b34fb
+        Handle: 6
+        Description: Peripheral Preferred Connection Parameters
+        Descriptiors:
+        Properties:
+            read
+        UUID: 00002aa6-0000-1000-8000-00805f9b34fb
+        Handle: 8
+        Description: Central Address Resolution
+        Descriptiors:
+        Properties:
+            read
+--------------------
+UUID: 00001801-0000-1000-8000-00805f9b34fb
+Handle: 10
+Description: Generic Attribute Profile
+    Characterists:
+        UUID: 00002a05-0000-1000-8000-00805f9b34fb
+        Handle: 11
+        Description: Service Changed
+        Descriptiors:
+            UUID: 00002902-0000-1000-8000-00805f9b34fb
+            Handle: 13
+            Description: Client Characteristic Configuration
+        Properties:
+            indicate
+--------------------
+UUID: 11a70100-f691-4b93-a6f4-0968f5b648f8
+Handle: 14
+Description: Unknown
+    Characterists:
+        UUID: 11a70101-f691-4b93-a6f4-0968f5b648f8
+        Handle: 15
+        Description: Unknown
+        Descriptiors:
+        Properties:
+            read
+        UUID: 11a70102-f691-4b93-a6f4-0968f5b648f8
+        Handle: 17
+        Description: Unknown
+        Descriptiors:
+        Properties:
+            read
+        UUID: 11a70103-f691-4b93-a6f4-0968f5b648f8
+        Handle: 19
+        Description: Unknown
+        Descriptiors:
+        Properties:
+            read
+        UUID: 11a70104-f691-4b93-a6f4-0968f5b648f8
+        Handle: 21
+        Description: Unknown
+        Descriptiors:
+        Properties:
+            read
+--------------------
+UUID: 11a70200-f691-4b93-a6f4-0968f5b648f8
+Handle: 23
+Description: Unknown
+    Characterists:
+        UUID: 11a70201-f691-4b93-a6f4-0968f5b648f8
+        Handle: 24
+        Description: Unknown
+        Descriptiors:
+            UUID: 00002902-0000-1000-8000-00805f9b34fb
+            Handle: 26
+            Description: Client Characteristic Configuration
+        Properties:
+            notify
+            read
+--------------------
+UUID: 11a70300-f691-4b93-a6f4-0968f5b648f8
+Handle: 27
+Description: Unknown
+    Characterists:
+        UUID: 11a70301-f691-4b93-a6f4-0968f5b648f8
+        Handle: 28
+        Description: Unknown
+        Descriptiors:
+        Properties:
+            write
+            read
+        UUID: 11a70302-f691-4b93-a6f4-0968f5b648f8
+        Handle: 30
+        Description: Unknown
+        Descriptiors:
+            UUID: 00002901-0000-1000-8000-00805f9b34fb
+            Handle: 32
+            Description: Characteristic User Description
+        Properties:
+            write
+        UUID: 11a70303-f691-4b93-a6f4-0968f5b648f8
+        Handle: 33
+        Description: Unknown
+        Descriptiors:
+            UUID: 00002902-0000-1000-8000-00805f9b34fb
+            Handle: 35
+            Description: Client Characteristic Configuration
+            UUID: 00002901-0000-1000-8000-00805f9b34fb
+            Handle: 36
+            Description: Characteristic User Description
+        Properties:
+            notify
+            read
+        UUID: 11a70304-f691-4b93-a6f4-0968f5b648f8
+        Handle: 37
+        Description: Unknown
+        Descriptiors:
+            UUID: 00002901-0000-1000-8000-00805f9b34fb
+            Handle: 39
+            Description: Characteristic User Description
+        Properties:
+            write
+            read
+--------------------
+UUID: 0000fe59-0000-1000-8000-00805f9b34fb
+Handle: 40
+Description: Nordic Semiconductor ASA
+    Characterists:
+        UUID: 8ec90003-f315-4f60-9fb8-838830daea50
+        Handle: 41
+        Description: Buttonless DFU
+        Descriptiors:
+            UUID: 00002902-0000-1000-8000-00805f9b34fb
+            Handle: 43
+            Description: Client Characteristic Configuration
+        Properties:
+            indicate
+            write
+--------------------
