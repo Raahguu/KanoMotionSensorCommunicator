@@ -190,7 +190,55 @@ def write_handler(address : str):
                     print("It must be between 0 and 255")
 
         	
+def notification_handler(sender, data):
+    # For non motion sensing
+    if sender.handle != 24:
+        print(f"Notification from {sender.handle}: {data}")
+        
+    # For the motion
+    cursor_speed_mult = 0.1
+    
+    import pyautogui    
+    # Up: data[0]}
+    # Right: data[1]
+    # Down: data[2]
+    # Left: data[3]
+    
+    # move the cursor
+    # The values  are 0-255, 
+    # with 0 being they are at max closeness, 
+    # and 255 being the hand is not there
+    right_movement = ((255 - data[1]) - (255 - data[3])) * cursor_speed_mult
+    down_movement =  ((255 - data[2]) - (255 - data[0])) * cursor_speed_mult
+    
+    # Remove pauses
+    pyautogui.PAUSE = 0
+    
+    pyautogui.move(right_movement, down_movement)
+    
 
+async def notify_for_motion(address):
+    """
+    Sets up the continous notifying for the device as long as the program is open
+    """
+    
+    print("Connecting")
+    async with BleakClient(address, use_cached_services=False) as client:
+        if not client.is_connected:
+            print("Could not connect")
+            return
+        
+        print(f"Connected to {client.name if client.name else client.address}")
+        
+        print("Turning on notifying")
+        try:
+            await client.start_notify(24, notification_handler)
+        except BleakError as e:
+            print(f"Error: {str(e)}")
+        
+        print("Notifications on")
+        while True:
+        	await asyncio.sleep(1)
 
 
 def main() -> None:
@@ -205,6 +253,7 @@ def main() -> None:
     print("(M)ap out all services and characteristics of the device")
     print("(R)ead all the characteristic values of a service")
     print("(W)rite a new value to a characteristic")
+    print("(N)otify for motion sensing")
     inp = input().strip().lower()
 
     
@@ -215,6 +264,7 @@ def main() -> None:
         	handle = int(input("which service (input handle number): ").strip())
         	asyncio.run(get_all_characteristic_values(address, handle))
         case "w": write_handler(address)
+        case "n": asyncio.run(notify_for_motion(address))
         case _: print("unknown option")
     return
 
